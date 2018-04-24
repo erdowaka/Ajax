@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<titile>Latihan Ajx1.html</title>
+<head>
+<script>function loadXMLDoc(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+	xmlhttp=new XMLHttpRequest();
+	}else{
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	if(xmlhttp.readyState==4 && xmlhttp.status==200){
+	document.getElementById("isi").innerHTML=xmlhttp.responseText;
+	}
+	}
+	xmlhttp.open("GET","text1.xml",true);
+	xmlhttp.send();
+}function badan(){
+	var xmlhttp;
+	if (window.XMLHttpRequest){
+	xmlhttp=new XMLHttpRequest();
+	}else{
+	xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+	}
+	xmlhttp.onreadystatechange=function(){
+	if(xmlhttp.readyState==4 && xmlhttp.status==200){
+	document.getElementById("badan").innerHTML=xmlhttp.responseText;
+	}
+	}
+	xmlhttp.open("GET","data.xml",true);
+	xmlhttp.send();
+}
+
+</script>
+</head>
+<body>
+<div id="isi">
+<h2>Kalimat Utama Sebelum DI ubah</h2></div>
+<button type="button" onclick="loadXMLDoc()">Ubah Tulisan Diatas</button>
+<div id="badan">
+<h2>Data Diri</h2></div>
+<button type="button" onclick="badan()">Menampikan data diri</button>
+</body>
+</html>
